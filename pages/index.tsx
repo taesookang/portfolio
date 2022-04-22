@@ -5,7 +5,7 @@ import { stacklist } from '../data'
 
 const Home: NextPage = () => {
   return (
-    <div className="flex h-screen max-h-[900px] w-full justify-between py-10">
+    <div className="flex h-screen max-h-[900px] w-full justify-between py-16">
       {/* Profile pic & name & excerpt */}
       <div className="mx-10 flex h-full w-full flex-col items-center ">
         <Profile />

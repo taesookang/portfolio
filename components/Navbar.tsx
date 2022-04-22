@@ -10,7 +10,6 @@ interface Tab {
 }
 
 export const Navbar: React.FC = () => {
-  const [currentTab, setCurrentTab] = useState<number | null>(null)
   const router = useRouter()
 
   const tabs: Tab[] = [
@@ -19,18 +18,6 @@ export const Navbar: React.FC = () => {
     { id: 3, title: 'Contact', url: '/contact' },
   ]
 
-  useEffect(() => {
-    let parsedTab: number | string | null = localStorage.getItem('currentTab')
-    if (parsedTab) {
-      parsedTab = parseInt(parsedTab)
-      setCurrentTab(parsedTab)
-    }
-  }, [])
-
-  const handleClick = (tab: Tab) => {
-    setCurrentTab(tab.id)
-    localStorage.setItem('currentTab', tab.id.toString())
-  }
   return (
     <div className="fixed -left-[240px] z-50 h-screen w-[240px] min-w-[240px] justify-between border-r border-gray-200 bg-white md:flex lg:static ">
       <div className="flex h-full max-h-[831px] w-full flex-col justify-between">
@@ -53,10 +40,11 @@ export const Navbar: React.FC = () => {
                   <a
                     className={`text-[18px] ${
                       selected
-                        ? 'font-medium text-basic-black'
-                        : 'text-gray-300 hover:text-gray-400'
-                    }`}
-                    onClick={() => handleClick(tab)}
+                        ? 'font-medium text-primary'
+                        : 'text-gray-300 hover:text-secondary'
+                    }
+                     transition-all ease-in-out duration-300
+                    `}
                   >
                     {tab.title}
                   </a>
@@ -81,6 +69,6 @@ export const Navbar: React.FC = () => {
 }
 
 export const Dot: React.FC = () => {
-  return <div className="ml-4 h-3 w-3 rounded-full bg-primary" />
+  return <div className="ml-4 h-2 w-2 rounded-full bg-primary" />
 }
 export default Navbar

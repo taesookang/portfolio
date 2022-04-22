@@ -5,28 +5,29 @@
 
 
 $primary: #45BCFF;
-$primary_dark: #2b7faf;
-
-$secondary: #F8FDFF;
+$secondary: #2b7faf;
+$background: #F8FDFF;
+$border: #e5e7eb;
+$text: #262626;
 
 html,
 body {
   padding: 0;
   margin: 0;
   font-family: "Roboto", sans-serif;
-  color: #262626;
-  background-color: $secondary;
+  color: $text;
+  background-color: $background;
   min-height: 100% !important;
   height: 100%;
   box-sizing: border-box;
 
   ::selection {
       color: white;
-      background-color: $primary_dark;
+      background-color: $secondary;
   }
 }
 
-h1 { 
+h1 {
     font-size: 24px;
     font-weight: 500;
 }
@@ -39,8 +40,54 @@ h2 {
 
 
 .card {
-    border: 1px solid #e5e7eb;
+    border: 1px solid $border;
     background-color: #ffffff;
     border-radius: 6px;
-    // box-shadow: 2px 2px 15px -8px rgba(0, 0, 0, 0.2);
+    box-shadow: 2px 2px 15px -8px rgba(0, 0, 0, 0.2);
+}
+
+label {
+    color: $primary;
+    font-size: 14px;
+}
+input, textarea {
+    border: 1px solid $border;
+    border-radius: 4px;
+    width: 100%;
+    font-size: 14px;
+    margin-bottom: 8px;
+
+    &:focus {
+        outline: none !important;
+        border-color: $primary;
+    }
+}
+
+input {
+    padding: 0 8px;
+    height: 32px;
+}
+
+textarea {
+    resize: none;
+    height: 140px;
+    padding: 8px;
+}
+
+.btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 6px;
+    background: $primary;
+    padding: 8px 0;
+    font-size: 14px;
+    color: white;
+    box-shadow: 0 2px 15px -5px rgba($color: $secondary, $alpha: .5);
+
+    &:hover {
+        transform: translateY(-2px);
+        background-color: darken($primary, 10);
+        transition: all .2s ease-in;
+    }
 }
