@@ -91,3 +91,38 @@ textarea {
         transition: all .2s ease-in;
     }
 }
+
+.menu-btn {
+    width: 32px;
+    height: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+
+    span {
+        width: 100%;
+        height: 3px;
+        background-color: $primary;
+        transform-origin: left;
+        transition: all .3s ease;
+        border-radius: 5px;
+    }
+
+    &.active {
+        span {
+            &:first-child {
+                transform: rotate(45deg);
+                background-color: #fff;
+            }
+            &:nth-child(2) {
+                opacity: 0;
+            }
+            &:last-child {
+                transform: rotate(-45deg);
+                background-color: #fff;
+
+            }
+        }
+    }
+}

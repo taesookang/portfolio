@@ -51,8 +51,8 @@ const PortfolioPage: NextPage = () => {
                 key={project.id}
                 className={`my-4 cursor-pointer text-[24px] font-medium capitalize tracking-wide ${
                   currentProjectId === project.id
-                    ? ' text-primary scale-125 origin-bottom-left'
-                    : 'text-gray-300 hover:text-secondary/40'
+                    ? ' text-primary sm:scale-125 origin-bottom-left'
+                    : 'text-gray-300 hover:text-secondary/40 '
                 }
                   transition-all ease-in-out duration-400
                 `}

@@ -9,7 +9,12 @@ interface Tab {
   url: string
 }
 
-export const Navbar: React.FC = () => {
+interface Props {
+  menuOpen: boolean
+  setMenuOpen:React.Dispatch<React.SetStateAction<boolean>>
+}
+
+export const Navbar: React.FC<Props> = ({ menuOpen, setMenuOpen }) => {
   const router = useRouter()
 
   const tabs: Tab[] = [
@@ -19,7 +24,11 @@ export const Navbar: React.FC = () => {
   ]
 
   return (
-    <div className="fixed -left-[240px] z-50 h-screen w-[240px] min-w-[240px] justify-between border-r border-gray-200 bg-white md:flex lg:static ">
+    <div
+      className={`fixed ${
+        menuOpen ? 'left-0' : '-left-[240px]'
+      } z-50 flex h-screen w-[240px] min-w-[240px] justify-between border-r border-gray-200 bg-white lg:static transition-all ease-in duration-300`}
+    >
       <div className="flex h-full max-h-[831px] w-full flex-col justify-between">
         {/* Logo */}
         <div className="flex w-full items-center justify-center py-4">
@@ -43,8 +52,10 @@ export const Navbar: React.FC = () => {
                         ? 'font-medium text-primary'
                         : 'text-gray-300 hover:text-secondary'
                     }
-                     transition-all ease-in-out duration-300
+                     transition-all duration-300 ease-in-out
                     `}
+                    onClick={() => setMenuOpen(false)}
+              
                   >
                     {tab.title}
                   </a>
