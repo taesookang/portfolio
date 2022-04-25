@@ -2,8 +2,8 @@ import React from 'react'
 
 export const IntroCard: React.FC = () => {
   return (
-    <div className="card relative flex h-full w-full min-w-[320px] max-w-[760px] flex-col overflow-y-scroll px-10">
-      <h1 className="sticky top-0 w-full border-b border-gray-200 bg-white pl-2 pt-6 pb-2">
+    <div className="card relative flex h-fit sm:h-full w-full min-w-[320px] max-w-[760px] flex-col overflow-visible sm:overflow-y-scroll px-4 sm:px-10">
+      <h1 className="static sm:sticky top-0 w-full border-b border-gray-200 bg-white pl-2 pt-6 pb-2">
         Introduction
       </h1>
       <p className="px-2 pt-4 text-sm text-gray-500">

@@ -27,9 +27,9 @@ export const Navbar: React.FC<Props> = ({ menuOpen, setMenuOpen }) => {
     <div
       className={`fixed ${
         menuOpen ? 'left-0' : '-left-[240px]'
-      } z-50 flex h-screen w-[240px] min-w-[240px] justify-between border-r border-gray-200 bg-white lg:static transition-all ease-in duration-300`}
+      } z-50 flex h-full sm:h-screen w-[240px] min-w-[240px] justify-between border-r border-gray-200 bg-white lg:static transition-all ease-in duration-300`}
     >
-      <div className="flex h-full max-h-[831px] w-full flex-col justify-between">
+      <div className="flex h-full sm:max-h-[831px] w-full flex-col justify-between py-8">
         {/* Logo */}
         <div className="flex w-full items-center justify-center py-4">
           <button onClick={() => router.push('/')}>
@@ -50,7 +50,7 @@ export const Navbar: React.FC<Props> = ({ menuOpen, setMenuOpen }) => {
                     className={`text-[18px] ${
                       selected
                         ? 'font-medium text-primary'
-                        : 'text-gray-300 hover:text-secondary'
+                        : 'text-gray-300 hover-hover:text-secondary'
                     }
                      transition-all duration-300 ease-in-out
                     `}

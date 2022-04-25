@@ -42,17 +42,17 @@ const PortfolioPage: NextPage = () => {
   )
 
   return (
-    <div className="flex h-screen max-h-[821px] w-full py-16">
-      <div className="flex h-full w-full px-8">
-        <div className="flex h-full w-1/3 max-w-[340px] items-center justify-center">
-          <ul className="flex flex-col w-[160px]">
+    <div className="flex h-auto sm:h-screen sm:max-h-[821px] w-full py-16">
+      <div className="flex flex-col sm:flex-row h-full w-full px-0 sm:px-8">
+        <div className="flex h-full w-full sm:w-1/3 max-w-full sm:max-w-[340px] items-center justify-center">
+          <ul className="grid grid-cols-2 sm:flex flex-col w-full sm:w-[160px] border-y border-primary/30 sm:border-none ">
             {projects.map((project) => (
               <li
                 key={project.id}
-                className={`my-4 cursor-pointer text-[24px] font-medium capitalize tracking-wide ${
+                className={`py-4 sm:py-6 cursor-pointer text-center sm:text-left text-sm sm:text-[24px] font-medium capitalize tracking-wide ${
                   currentProjectId === project.id
-                    ? ' text-primary sm:scale-125 origin-bottom-left'
-                    : 'text-gray-300 hover:text-secondary/40 '
+                    ? ' text-primary sm:scale-125 origin-bottom-left bg-primary/10 sm:bg-transparent'
+                    : 'text-gray-300 hover:text-primary sm:hover:text-secondary/40 '
                 }
                   transition-all ease-in-out duration-400
                 `}
@@ -63,15 +63,8 @@ const PortfolioPage: NextPage = () => {
             ))}
           </ul>
         </div>
-        <div className="flex h-full w-4/5 max-w-[720px] flex-col justify-center">
-          {/* <video
-          autoPlay
-          muted
-          className="mb-4 aspect-[1144/720] w-full min-w-full rounded-lg border-4 border-primary bg-zinc-800 "
-        >
-            <source src={currentProject?.url} type="video/mp4"/>
-          </video> */}
-          <div className="mb-4 flex aspect-[1180/720] w-full items-center justify-center overflow-hidden rounded-lg border-4 border-primary bg-zinc-900 ">
+        <div className="flex h-full min-w-full sm:min-w-0 sm:w-4/5 max-w-[720px] flex-col justify-center">
+          <div className="mb-4 mt-4 sm:mt-0 flex sm:aspect-[1180/720] w-full items-center justify-center overflow-hidden sm:rounded-lg sm:border-4 border-primary bg-zinc-900 ">
             <ReactPlayer
               url={currentProject?.url}
               width="100%"
@@ -79,7 +72,7 @@ const PortfolioPage: NextPage = () => {
               controls
             />
           </div>
-          <div className="card h-1/3 w-full px-6 py-4">
+          <div className="card h-fit sm:h-1/3 w-full px-6 py-4">
             <div className="flex h-full w-full flex-col gap-4 sm:flex-row">
               <div className="h-full w-full overflow-y-scroll">
                 <div className="sticky top-0 ">

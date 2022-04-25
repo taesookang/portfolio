@@ -5,15 +5,15 @@ import { stacklist } from '../data'
 
 const Home: NextPage = () => {
   return (
-    <div className="flex h-screen max-h-[900px] w-full justify-between py-16">
+    <div className="flex sm:flex-row flex-col h-auto sm:h-screen sm:max-h-[900px] w-full justify-between py-16 overflow-y-scroll">
       {/* Profile pic & name & excerpt */}
-      <div className="mx-10 flex h-full w-full flex-col items-center ">
+      <div className="sm:px-10 flex h-full w-full flex-col items-center ">
         <Profile />
         <IntroCard />
       </div>
 
       {/* Stacks */}
-      <div className="mr-10 h-full max-h-[874px] min-w-[320px]">
+      <div className="mt-2 sm:mt-0 sm:pr-10 h-full max-h-[874px] min-w-[320px]">
         <div className="card relative h-full w-full overflow-y-scroll px-4">
           <h1 className="sticky bg-white z-30 top-0 px-4 pt-6 pb-2">Stacks</h1>
           {stacklist.map((list) => (

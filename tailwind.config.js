@@ -11,7 +11,7 @@ module.exports = {
         basic: {
           black: "#262626"
         }
-      }
+      },
     },
   },
   plugins: [],
