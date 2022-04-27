@@ -69,14 +69,14 @@ export const Navbar: React.FC<Props> = ({ menuOpen, setMenuOpen }) => {
           <Link href="https://github.com/taesookang/">
             <a target="_blank" rel="noreferrer">
               <button>
-                <Image src="/brands/github.svg" width={40} height={40} />
+                <Image src="/socials/github.svg" width={40} height={40} />
               </button>
             </a>
           </Link>
           <Link href="https://www.linkedin.com/in/taesoo-kang/">
             <a target="_blank" rel="noreferrer">
               <button>
-                <Image src="/brands/linkedin.svg" width={40} height={40} />
+                <Image src="/socials/linkedin.svg" width={40} height={40} />
               </button>
             </a>
           </Link>

@@ -6,26 +6,26 @@ export const IntroCard: React.FC = () => {
       <h1 className="static top-0 w-full border-b border-gray-200 bg-white pl-2 pt-6 pb-2 sm:sticky">
         Introduction
       </h1>
-      <p className="px-2 pt-4 text-sm text-gray-500">
+      <p className="px-2 pt-4 text-sm text-basic-black/60">
         Hello, my name is Taesoo and I am a self-taught coder who is proficient
-        in React JS and currently looking for a chance to start my career as a
-        front-end developer.
+        in <b>React JS</b> and currently looking for a chance to start my career
+        as a <b>front-end developer</b>.
         <br />
         <br />
-        Despite majoring in CIS, I learned most of my web development concepts
-        on my own since my college only offered a few web development courses
-        that only covered basic levels of HTML, CSS, and JS.
+        Even though I studied CIS when I was in college, I learned most of my
+        web development concepts by myself, since my college's web development
+        courses mainly covered HTML, CSS, and JS basics, rather than diving deep
+        into modern frameworks.
         <br />
         <br />
         Also, my interest in UX/UI design led me to learn web design tools such
-        as Sketch and Figma during the Coronavirus pandemic, which enhanced my
-        development skills greatly.
+        as Sketch and Figma, which enhanced my development skills greatly.
         <br />
         <br />
         As I practiced and built my own projects, I became aware of the
         importance of efficiency in coding and how fascinating it is to simplify
         complicated problems. Therefore, my primary interests in these days are
-        data structure and algorithm and clean coding.
+        data structure/algorithm and clean coding.
       </p>
       <div className="sticky bottom-0 left-0 z-20 min-h-[48px] w-full bg-gradient-to-t from-white to-transparent" />
     </div>

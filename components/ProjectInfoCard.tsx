@@ -29,7 +29,7 @@ export const ProjectInfoCard: React.FC<Props> = ({ currentProject }) => {
           </div>
 
           {currentProject?.desc.map((context) => (
-            <p className="mb-2 text-sm text-basic-black/70">{context}</p>
+            <p className="mb-2 text-sm text-basic-black/60">{context}</p>
           ))}
           <div className="sticky bottom-0 h-4 w-full bg-gradient-to-t from-white to-transparent" />
         </div>
