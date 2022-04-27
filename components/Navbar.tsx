@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
@@ -11,7 +11,7 @@ interface Tab {
 
 interface Props {
   menuOpen: boolean
-  setMenuOpen:React.Dispatch<React.SetStateAction<boolean>>
+  setMenuOpen: React.Dispatch<React.SetStateAction<boolean>>
 }
 
 export const Navbar: React.FC<Props> = ({ menuOpen, setMenuOpen }) => {
@@ -27,9 +27,9 @@ export const Navbar: React.FC<Props> = ({ menuOpen, setMenuOpen }) => {
     <div
       className={`fixed ${
         menuOpen ? 'left-0' : '-left-[240px]'
-      } z-50 flex h-full sm:h-screen w-[240px] min-w-[240px] justify-between border-r border-gray-200 bg-white lg:static transition-all ease-in duration-300`}
+      } z-50 flex h-full w-[240px] min-w-[240px] justify-between border-r border-gray-200 bg-white transition-all duration-300 ease-in sm:h-screen lg:static`}
     >
-      <div className="flex h-full sm:max-h-[831px] w-full flex-col justify-between py-8">
+      <div className="flex h-full w-full flex-col justify-between py-8 sm:max-h-[831px]">
         {/* Logo */}
         <div className="flex w-full items-center justify-center py-4">
           <button onClick={() => router.push('/')}>
@@ -50,12 +50,11 @@ export const Navbar: React.FC<Props> = ({ menuOpen, setMenuOpen }) => {
                     className={`text-[18px] ${
                       selected
                         ? 'font-medium text-primary'
-                        : 'text-gray-300 hover-hover:text-secondary'
+                        : 'hover-hover:text-secondary text-gray-300'
                     }
                      transition-all duration-300 ease-in-out
                     `}
                     onClick={() => setMenuOpen(false)}
-              
                   >
                     {tab.title}
                   </a>
@@ -67,12 +66,20 @@ export const Navbar: React.FC<Props> = ({ menuOpen, setMenuOpen }) => {
         </ul>
         {/* Social Links */}
         <div className="flex w-full items-center justify-center gap-4 py-4">
-          <button>
-            <Image src="/brands/github.svg" width={40} height={40} />
-          </button>
-          <button>
-            <Image src="/brands/linkedin.svg" width={40} height={40} />
-          </button>
+          <Link href="https://github.com/taesookang/">
+            <a target="_blank" rel="noreferrer">
+              <button>
+                <Image src="/brands/github.svg" width={40} height={40} />
+              </button>
+            </a>
+          </Link>
+          <Link href="https://www.linkedin.com/in/taesoo-kang/">
+            <a target="_blank" rel="noreferrer">
+              <button>
+                <Image src="/brands/linkedin.svg" width={40} height={40} />
+              </button>
+            </a>
+          </Link>
         </div>
       </div>
     </div>

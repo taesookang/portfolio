@@ -12,10 +12,12 @@ interface IStackCategory {
 type StackList = IStackCategory[]
 
 interface IProject {
+  id: number
   title: string
   stacks: string[]
-  desc: string
-  video: string
+  desc: string[]
+  url: string
+  thumbnail: string
   website: string
   github: string
 }

@@ -30,7 +30,7 @@ export const Layout: React.FC<Props> = ({ children }) => {
       <div
         className={`fixed h-full w-full ${
           menuOpen ? 'z-40 bg-[#0f2735]/50' : '-z-10'
-        } transition-all duration-300 ease-in`}
+        } transition-colors duration-300 ease-in`}
       />
       <MenuToggle menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
       <Navbar menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
